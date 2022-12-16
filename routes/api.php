@@ -21,10 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('todo-lists', [TodoListsController::class, 'store']);
 Route::get('todo-lists', [TodoListsController::class, 'all']);
 Route::patch('todo-lists/{todolist}', [TodoListsController::class, 'update']);
+Route::delete('todo-lists/{todolist}', [TodoListsController::class, 'delete']);
 
 Route::post('cards', [CardsController::class, 'store']);
 Route::get('cards/{card}', [CardsController::class, 'get']);
 Route::patch('cards/{card}', [CardsController::class, 'update']);
-//Route::get('/todo-lists/{todolist}', [TodoListsController::class, 'get']);
+
 
 

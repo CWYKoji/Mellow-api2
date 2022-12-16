@@ -35,9 +35,8 @@ class TodoListsController extends Controller
         $todoList->list_order = $count + 1;
         $todoList->save();
 
-        return $todoList;
+        return new TodoListResource($todoList);
     }
-
 
     public function update(Request $request, TodoList $todoList){
 
@@ -51,10 +50,17 @@ class TodoListsController extends Controller
         }
         $todoList->save();
 
-        return $todoList;
+        return new TodoListResource($todoList);
 
+    }
 
+    public function delete(TodoList $todoList){
 
+        $todoList->delete();
+
+        return response()->json([
+            'success' =>true,
+        ]);
 
 
     }

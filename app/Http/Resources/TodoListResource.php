@@ -17,7 +17,7 @@ class TodoListResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this ->title,
-            'card' => CardResource::collection($this->cards),
+            'cards' => CardResource::collection($this->cards),
             'order' => $this -> list_order,
 
         ];
